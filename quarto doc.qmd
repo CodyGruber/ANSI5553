@@ -1,0 +1,24 @@
+---
+title: "ANSI5553 Group Project Quarto"
+author: "Cody Gruber"
+date: today
+format: html
+embed-resources: true
+execute: 
+  echo: true
+editor: visual
+---
+
+Summary Statistics
+
+```{r}
+library(dplyr)
+
+chickwts |>
+  group_by(feed) |>
+  summarise(
+    n = n(),
+    mean = mean(weight),
+    sd = sd(weight)
+  )
+```
